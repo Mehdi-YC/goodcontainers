@@ -22,7 +22,7 @@
             }],
             "env": [{
                 "label": "activate user auth",
-                "name": "N8N_BASIC_AUTH_ACTIVE",
+                "name": "N8N_BASIC_AUTH_ACTIVE"
             },
             {
                 "label": "access udername",
