@@ -8,7 +8,7 @@
       "description": "OExtensible low-code framework for building business applications.",
       "categories": ["low-code"],
       "platform": "linux",
-      "logo": "https://tooljet.com/img/logo/text-logo-blue.svg",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
       "repository": {
         "url": "https://github.com/SAVE-POlNT/goodcontainers",
         "stackfile": "tooljet/docker-compose.yaml"
