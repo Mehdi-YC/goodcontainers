@@ -1,5 +1,8 @@
     
-     {
+{
+  "version": "2",
+  "templates": [     
+{
       "type": 2,
       "title": "Tooljet",
       "description": "OExtensible low-code framework for building business applications.",
@@ -86,4 +89,4 @@
 
         }
       ]
-    },
+    },]}
