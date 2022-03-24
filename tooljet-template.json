@@ -3,6 +3,22 @@
 	"templates": [
 		
 		
+	        {
+            "categories": [
+                "data","dashboard"
+            ],
+            "description": "Apache Superset is a Data Visualization and Data Exploration Platform. ",
+
+            "image": "apache/superset:latest",
+            "logo": "https://superset.apache.org/img/favicon.ico",
+            "platform": "linux",
+            "ports": [
+                "8080/tcp"
+            ],
+            "title": "Apache superset",
+            "type": 1
+        },
+		
 		
 		
 
