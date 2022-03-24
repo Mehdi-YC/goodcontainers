@@ -15,21 +15,8 @@
                 "5678/tcp"
             ],
             "title": "n8n",
-            "type": 1,
+            "type": 1
 
-            "env": [{
-                "label": "activate user auth",
-                "name": "N8N_BASIC_AUTH_ACTIVE"
-            },
-            {
-                "label": "access udername",
-                "name": "N8N_BASIC_AUTH_USER"
-            },
-            {
-                "label": "access password",
-                "name": "N8N_BASIC_AUTH_PASSWORD"
-            }
-        ]
         },
 
         
