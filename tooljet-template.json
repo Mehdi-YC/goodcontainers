@@ -16,9 +16,7 @@
             ],
             "title": "n8n",
             "type": 1,
-            "volumes": [{
-                "container": "/home/node/.n8n"
-            }],
+
             "env": [{
                 "label": "activate user auth",
                 "name": "N8N_BASIC_AUTH_ACTIVE"
