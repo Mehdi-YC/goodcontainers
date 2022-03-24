@@ -2,7 +2,35 @@
 	"version": "2",
 	"templates": [
 
+        	"categories": [
+        		"database", "low-code"
+        	],
+        	"description": "The Open Source Airtable Alternative 🎃Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet. .",
 
+        	"image": "nocodb/nocodb:latest",
+        	"logo": "https://docs.nocodb.com/favicon-128.png",
+        	"platform": "linux",
+        	"ports": [
+        		"8080/tcp"
+        	],
+        	"title": "NocoDB",
+        	"type": 1,
+        	"volumes": [{
+        		"container": "/home/node/.n8n"
+        	}],
+        	"env": [{
+        			"label": "use a database first",
+        			"name": "NC_DB",
+        			"default": "pg://host:port?u=user&p=password&d=database"
+        		},
+        		{
+        			"label": "secret token",
+        			"name": "NC_AUTH_JWT_SECRET",
+        			"default": "569a1821-0a93-45e8-87ab-eb857f20a010"
+        		}
+
+        	]
+        },
 
 
 		{
