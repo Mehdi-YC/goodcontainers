@@ -2,6 +2,27 @@
 	"version": "2",
 	"templates": [
 		
+		
+		
+		
+
+        {
+            "categories": [
+                "code","pipelines"
+            ],
+            "description": "Build powerful pipelines in any programming language. ",
+
+            "image": "gaiapipeline/gaia:latest",
+            "logo": "https://gist.githubusercontent.com/michelvocks/ef3894f63c3bb004bca1a2fd5f7eb644/raw/40c5799d74a6f28af1874e726083a50a3ebd877d/gaia-logo-text.png",
+            "platform": "linux",
+            "ports": [
+                "8080/tcp"
+            ],
+            "title": "Gaia pipeline",
+            "type": 1
+        },
+		
+		
 	        {
             "categories": [
                 "cms","low-code"
