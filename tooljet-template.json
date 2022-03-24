@@ -2,6 +2,23 @@
 	"version": "2",
 	"templates": [
 		
+	        {
+            "categories": [
+                "cms","low-code"
+            ],
+            "description": "Open source Node.js Headless CMS to easily build customisable APIs.",
+
+            "image": "strapi/strapi:latest",
+            "logo": "https://strapi.io/assets/favicon-32x32.png",
+            "platform": "linux",
+            "ports": [
+                "1337/tcp"
+            ],
+            "title": "Strapi",
+            "type": 1
+        },
+		
+		
 		
 		        {
             "categories": [
