@@ -3,15 +3,28 @@
   "version": "2",
   "templates": [     
 {
-      "type": 2,
-      "title": "Tooljet",
-      "description": "OExtensible low-code framework for building business applications.",
-      "categories": ["low-code"],
+      "type": 1,
+      "title": "MySQL",
+      "description": "The most popular open-source database",
+      "categories": ["database"],
       "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
-      "repository": {
-        "url": "https://github.com/SAVE-POlNT/goodcontainers",
-        "stackfile": "tooljet/docker-compose.yaml"
-      },
-
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+      "image": "mysql/mysql-server:5.7",
+      "env": [
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Root password"
+        },
+        {
+          "name": "MYSQL_ROOT_HOST",
+          "default": "%",
+          "preset": true
+        }
+      ],
+      "ports": ["3306/tcp"],
+      "volumes": [
+        {
+          "container": "/var/lib/mysql"
+        }
+      ]
     },]}
