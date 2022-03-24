@@ -1,8 +1,24 @@
 {
     "version": "2",
     "templates": [
+{
+        "categories": [
+            "workflow","low-code"
+        ],
+        "description": "Low-code programming for event-driven applications ",
 
-
+        "image": "nodered/node-red:latest",
+        "logo": "https://aws1.discourse-cdn.com/business6/uploads/nodered/original/1X/778549404735e222c89ce5449482a189ace8cdae.png",
+        "platform": "linux",
+        "ports": [
+            "1880/tcp"
+        ],
+        "title": "Node-red",
+        "type": 1,
+        "volumes": [{
+            "container": "/data"
+        }]
+    },
         {
             "categories": [
                 "database"
