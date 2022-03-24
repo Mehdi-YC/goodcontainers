@@ -1,6 +1,24 @@
 {
 	"version": "2",
 	"templates": [
+		
+		
+		        {
+            "categories": [
+                "coding","datascience"
+            ],
+            "description": "Base Jupyter Notebook Stack",
+
+            "image": "jupyter/base-notebook:latest",
+            "logo": "https://jupyter-docker-stacks.readthedocs.io/en/latest/_static/jupyter-logo.svg",
+            "platform": "linux",
+            "ports": [
+                "8888/tcp"
+            ],
+            "title": "Jupyter",
+            "type": 1
+
+        },
 		{
         	"categories": [
         		"database", "low-code"
