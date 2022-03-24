@@ -1,0 +1,5 @@
+sudo docker run -d \
+	-v etherpad_data:/opt/etherpad-lite/var \
+	-p 9001:9001 \
+	-e 'ADMIN_PASSWORD=supersecret' \
+	etherpad/etherpad
