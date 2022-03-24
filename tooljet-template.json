@@ -1,30 +1,35 @@
-    
 {
-  "version": "2",
-  "templates": [     
-{
-      "type": 1,
-      "title": "MySQL",
-      "description": "The most popular open-source database",
-      "categories": ["database"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
-      "image": "mysql/mysql-server:5.7",
-      "env": [
+  "env": [
+    {
+      "name": "MYSQL_ROOT_PASSWORD",
+      "label": "Root password",
+      "description": "Password used by the root user."
+    },
+    {
+      "name": "ENV_VAR_WITH_DEFAULT_VALUE",
+      "default": "default_value",
+      "preset": true
+    },
+    {
+      "name": "ENV_VAR_WITH_SELECT_VALUE",
+      "label": "An environment variable",
+      "description": "A description for this env var",
+      "select": [
         {
-          "name": "MYSQL_ROOT_PASSWORD",
-          "label": "Root password"
+          "text": "Yes, I agree",
+          "value": "Y",
+          "default": true
         },
         {
-          "name": "MYSQL_ROOT_HOST",
-          "default": "%",
-          "preset": true
+          "text": "No, I disagree",
+          "value": "N"
+        },
+        {
+          "text": "Maybe",
+          "value": "YN"
         }
       ],
-      "ports": ["3306/tcp"],
-      "volumes": [
-        {
-          "container": "/var/lib/mysql"
-        }
-      ]
-    },]}
+      "description": "Some environment variable."
+    }
+  ]
+}
