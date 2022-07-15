@@ -19,7 +19,21 @@
             "type": 1
         },
 		
-		
+		{
+            "categories": [
+                "data","dashboard"
+            ],
+            "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more.",
+
+            "image": "grafana/grafana:latest",
+            "logo": "https://grafana.com/static/assets/img/fav32.png",
+            "platform": "linux",
+            "ports": [
+                "3000/tcp"
+            ],
+            "title": "Grafana",
+            "type": 1
+        },
 		
 
         {
