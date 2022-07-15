@@ -1111,22 +1111,6 @@
 					"container": "/var/run/docker.sock"
 			}
 	]
-},
-{
-	"categories": [
-		"selfhost","tool","onlyoffice"
-	],
-	"description": "similar to nextcloud , but better imo , (has nlyoffice integration & more)",
-
-	"image": "owncloud:latest",
-	"logo": "https://d1q6f0aelx0por.cloudfront.net/product-logos/24f2a51f-4b42-4dea-98c5-6bb9603c1b4e-owncloud.png",
-	"platform": "linux",
-	"ports": [
-		"8080/tcp",
-		"80/tcp"
-	],
-	"title": "owncloud",
-	"type": 1
 }
 
 
