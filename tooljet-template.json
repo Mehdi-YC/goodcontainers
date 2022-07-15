@@ -933,7 +933,184 @@
 					"container": "/usr/src/app/localMetadata"
 				}
 			]
-		}
-
+		},
+		{
+			"categories": [
+					"Other",
+					"Music"
+			],
+			"description": "Deemix is a deezer downloader built from the ashes of Deezloader Remix.",
+			"image": "registry.gitlab.com/bockiii/deemix-docker",
+			"logo": "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/Images/deemix.png",
+			"name": "deemix",
+			"note": "Deemix may take a few minutes to install. Be sure to check the logs for details. Refer to \u003ca href='https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken'\u003ethis page\u003c/a\u003e for userToken details.",
+			"platform": "linux",
+			"ports": [
+					"9666:9666/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "DeeMix",
+			"type": 1,
+			"volumes": [
+					{
+							"bind": "/portainer/Files/AppData/Config/DeeMix",
+							"container": "/config"
+					},
+					{
+							"bind": "/portainer/Downloads",
+							"container": "/downloads"
+					}
+			]
+	},
+	{
+		"type": 1,
+		"title": "Mongo",
+		"description": "Open-source document-oriented database",
+		"categories": [
+				"database"
+		],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+		"image": "mongo:latest",
+		"ports": [
+				"27017/tcp"
+		],
+		"volumes": [{
+				"container": "/data/db"
+		}]
+	},
+	{
+		"type": 1,
+		"title": "MySQL",
+		"description": "The most popular open-source database",
+		"categories": [
+				"database"
+		],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+		"image": "mysql:latest",
+		"env": [{
+				"name": "MYSQL_ROOT_PASSWORD",
+				"label": "Root password"
+		}],
+		"ports": [
+				"3306/tcp"
+		],
+		"volumes": [{
+				"container": "/var/lib/mysql"
+		}]
+},
+{
+	"type": 1,
+	"title": "Odoo",
+	"description": "Open-source business apps",
+	"categories": [
+			"project-management"
+	],
+	"platform": "linux",
+	"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/odoo.png",
+	"image": "odoo:latest",
+	"env": [{
+					"name": "HOST",
+					"label": "PostgreSQL database host",
+					"type": "container"
+			},
+			{
+					"name": "USER",
+					"label": "Database user"
+			},
+			{
+					"name": "PASSWORD",
+					"label": "Database password"
+			}
+	],
+	"ports": [
+			"8069/tcp"
+	],
+	"volumes": [{
+					"container": "/var/lib/odoo"
+			},
+			{
+					"container": "/mnt/extra-addons"
+			}
+	]
+},
+{
+	"categories": [
+			"Other",
+			"Tools"
+	],
+	"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
+	"image": "pihole/pihole:latest",
+	"logo": "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/Images/pihole.png",
+	"name": "pihole",
+	"note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article \u003ca href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'\u003ehere\u003c/a\u003e if you run into issues binding to port 53.",
+	"platform": "linux",
+	"ports": [
+			"53:53/tcp",
+			"53:53/udp",
+			"67:67/udp",
+			"1010:80/tcp",
+			"4443:443/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Pi-Hole",
+	"type": 1,
+	"volumes": [
+			{
+					"bind": "/portainer/Files/AppData/Config/PiHole",
+					"container": "/etc/pihole"
+			},
+			{
+					"bind": "/portainer/Files/AppData/Config/PiHole/DNS",
+					"container": "/etc/dnsmasq.d"
+			}
+	]
+},
+{
+	"type": 1,
+	"title": "RabbitMQ",
+	"description": "Highly reliable enterprise messaging system",
+	"categories": [
+			"messaging"
+	],
+	"platform": "linux",
+	"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/rabbitmq.png",
+	"image": "rabbitmq:latest",
+	"ports": [
+			"5671/tcp",
+			"5672/tcp"
+	],
+	"volumes": [{
+			"container": "/var/lib/rabbitmq"
+	}]
+},
+{
+	"categories": [
+			"Other",
+			"Tools"
+	],
+	"description": "A web interface for managing docker containers with an emphasis on templating to provide 1 click deployments. Think of it like a decentralized app store for servers that anyone can make packages for.",
+	"image": "selfhostedpro/yacht:latest",
+	"logo": "https://raw.githubusercontent.com/SelfhostedPro/Yacht/master/readme_media/Yacht_logo_1_dark.png",
+	"name": "yacht",
+	"platform": "linux",
+	"ports": [
+			"8001:8000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Yacht",
+	"type": 1,
+	"volumes": [
+			{
+					"bind": "yacht",
+					"container": "/config"
+			},
+			{
+					"bind": "/var/run/docker.sock",
+					"container": "/var/run/docker.sock"
+			}
+	]
+}
 	]
 }
