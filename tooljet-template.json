@@ -1111,8 +1111,175 @@
 					"container": "/var/run/docker.sock"
 			}
 	]
+},
+
+{
+	"categories": [
+		"backend","lowcode"
+	],
+	"description": "Supabase is an open source Firebase alternative.It provides all the backend services you need to build a product. You can use it completely, or just the services you require:",
+	"env": [
+		{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "POSTGRES_PASSWORD"
+		,"default":"your-super-secret-and-long-postgres-password"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "JWT_SECRET"
+		,"default":"your-super-secret-jwt-token-with-at-least-32-characters-long"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ANON_KEY"
+		,"default":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SERVICE_ROLE_KEY"
+		,"default":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJzZXJ2aWNlX3JvbGUiLAogICAgImlzcyI6ICJzdXBhYmFzZS1kZW1vIiwKICAgICJpYXQiOiAxNjQxNzY5MjAwLAogICAgImV4cCI6IDE3OTk1MzU2MDAKfQ.DaYlNEoUrrEn2Ig7tqibS-PHK5vgusbcbo7X36XVt4Q"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "POSTGRES_HOST"
+		,"default":"db"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "POSTGRES_DB"
+		,"default":"postgres"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "POSTGRES_USER"
+		,"default":"postgres"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "POSTGRES_PORT"
+		,"default":"5432"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "KONG_HTTP_PORT"
+		,"default":"8000"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "KONG_HTTPS_PORT"
+		,"default":"8443"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "PGRST_DB_SCHEMAS"
+		,"default":"public,storage,graphql_public"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SITE_URL"
+		,"default":"http://localhost:3000"
+	},
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ADDITIONAL_REDIRECT_URLS"
+		,"default":""
+	},
+
+	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "JWT_EXPIRY"
+		,"default":"3600"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "DISABLE_SIGNUP"
+		,"default":"false"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ENABLE_EMAIL_SIGNUP"
+		,"default":"true"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ENABLE_EMAIL_AUTOCONFIRM"
+		,"default":"true"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_ADMIN_EMAIL"
+		,"default":"admin@example.com"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_HOST"
+		,"default":"fake"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_PORT"
+		,"default":"fake"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_USER"
+		,"default":"fake"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_PASS"
+		,"default":"fake"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "SMTP_SENDER_NAME"
+		,"default":"fake"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ENABLE_PHONE_SIGNUP"
+		,"default":"true"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "ENABLE_PHONE_AUTOCONFIRM"
+		,"default":"true"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "STUDIO_PORT"
+		,"default":"3000"
+	},	{
+		"description": "Password used by the MySQL root user.",
+		"label": "Database root password",
+		"name": "PUBLIC_REST_URL"
+		,"default":"http://localhost:8000/rest/v1/"
+	}
+
+],
+	"logo": "https://supabase.com/docs/supabase-dark.svg",
+	"note": "Deploys a Wordpress instance connected to a MySQL database.",
+	"platform": "linux",
+	"repository": {
+		"stackfile": "supabase/docker-compose.yml",
+		"url": "https://github.com/mehdi-yc/goodcontainers"
+	},
+	"title": "Supabase",
+	"type": 3
 }
-
-
 	]
 }
