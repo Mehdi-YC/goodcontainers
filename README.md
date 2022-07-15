@@ -6,12 +6,10 @@ this is a collections of good docker contaienrs iv collected over the time , if 
 
 [x] mysql
 
-[ ] rethinkdb
-
 [ ] tooljet
 
 [x] mongodb
 
 [ ] supabase
 
-[ ] owncloud
+[x] owncloud
