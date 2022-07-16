@@ -1,0 +1,89 @@
+ pageInfo:
+  title: TemplateZ
+  description: ''
+  navLinks:
+    - title: Portainer
+      path: http://192.168.1.122:9000
+      target: newtab
+  footerText: ' '
+appConfig:
+  theme: adventure-basic
+  layout: vertical
+  iconSize: medium
+  language: fr
+sections:
+  - name: Personal
+    icon: fas fa-rocket
+    items:
+      - title: GitHub
+        description: ''
+        icon: favicon
+        url: https://github.com/mehdi-yc
+        id: 0_836_github
+      - title: Reddit
+        description: ''
+        icon: >-
+          https://www.freeiconspng.com/thumbs/reddit-icon/red-circle-reddit-icon-1.png
+        url: https://reddit.vom
+        id: 1_836_reddit
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Data
+    icon: fas  fa-chart-pie
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Superset
+        icon: https://superset.apache.org/img/favicon.ico
+        url: http://192.168.1.122:8088
+        id: 0_378_superset
+      - title: Grafana
+        icon: https://grafana.com/static/assets/img/fav32.png
+        url: http://192.168.1.122:3333
+        id: 1_378_grafana
+      - title: Jupyter
+        icon: >-
+          https://jupyter-docker-stacks.readthedocs.io/en/latest/_static/jupyter-logo.svg
+        url: >-
+          https://192.168.1.122:8888/lab?token=425a35f9757a1d589e6a0d082e9a4434fcd8aa59e5d7a826
+        id: 2_378_jupyter
+  - name: Automation
+    icon: fas fa-robot
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: n8n
+        icon: >-
+          https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png
+        url: http://192.168.1.122:5678
+        id: 0_1057_nn
+  - name: Productivity
+    icon: fas fa-file-arrow-up
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Vscode-server
+        icon: >-
+          https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png
+        url: http://192.168.1.122:3001
+        id: 0_1302_vscodeserver
+      - title: OwnCloud
+        icon: https://nextcloud.com/wp-content/uploads/2021/12/logo.png
+        url: http://192.168.1.122:81
+        id: 1_1302_owncloud
