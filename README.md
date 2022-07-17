@@ -6,10 +6,22 @@ this is a collections of good docker contaienrs iv collected over the time , if 
 
 [x] mysql
 
-[ ] tooljet
+[ ] apache nifi
+
+[x] tooljet
 
 [x] mongodb
 
-[ ] supabase
+[x] supabase
 
 [x] owncloud
+
+[ ] airbyte
+
+[ ] meltano
+
+[ ] python / js / go
+
+[ ] plesk
+
+[ ] torrent
