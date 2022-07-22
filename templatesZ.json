@@ -102,7 +102,7 @@
         	"title": "NocoDB",
         	"type": 1,
         	"volumes": [{
-        		"container": "/home/node/.n8n"
+        		"container": "/home/node/.nocodb"
         	}],
         	"env": [{
         			"label": "use a database first",
@@ -148,6 +148,12 @@
 					"label": "access password",
 					"name": "N8N_BASIC_AUTH_PASSWORD"
 				}
+				,
+				{
+					"label": "WEBHOOK_URL",
+					"name": "WEBHOOK_URL"
+				}
+				
 			]
 		},
 
