@@ -2,7 +2,24 @@
 	"version": "2",
 	"templates": [
 		
-		
+		        {
+            "categories": [
+                "data","Logging"
+            ],
+            "description": "Collect, search and visualise log data with Elasticsearch, Logstash, and Kibana. ",
+
+            "image": "sebp/elk:latest",
+            "logo": "https://cdn.freebiesupply.com/logos/large/2x/elastic-stack-logo-svg-vector.svg",
+            "platform": "linux",
+            "ports": [
+                "5601/tcp",
+		"9200/tcp",
+		"5044/tcp"
+            ],
+            "title": "ELK stack",
+            "type": 1
+        },
+			
 	        {
             "categories": [
                 "data","dashboard"
