@@ -1431,6 +1431,56 @@
 			},
 			"title": "Supabase",
 			"type": 3
+		},
+
+
+
+
+
+
+		{
+			"type": 1,
+			"title": "Rdesktop",
+			"name": "Rdesktop",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p><br>mkdir -p /volume1/docker/rdesktop/config</p>",
+			"description": "[Rdesktop](http://xrdp.org/) - Containers containing full desktop environments in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via RDP.",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rdesktop.png",
+			"image": "linuxserver/rdesktop:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+				}
+			],
+			"ports": [
+				"3389:3389/tcp"
+			],
+			"volumes": [
+				{
+					"container": "/var/run/docker.sock",
+					"bind": "/var/run/docker.sock"
+				},
+				{
+					"container": "/config",
+					"bind": "/volume1/docker/rdesktop/config"
+				}
+			],
+			"restart_policy": "unless-stopped"
 		}
 	]
 }
