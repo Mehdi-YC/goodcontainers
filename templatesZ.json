@@ -8,7 +8,7 @@
 			],
 			"description": "Redpanda Console is a developer-friendly UI for managing your Kafka/Redpanda workloads. ",
 			"image": "docker.redpanda.com/redpandadata/console:latest",
-			"logo": "https://i.pinimg.com/originals/a4/50/84/a45084beba52027a92462c7b9f1708c5.png",
+			"logo": "https://images.ctfassets.net/paqvtpyf8rwu/5wODDUzLP7teOGDS7M5m39/466f646e44c2ccc4e78236b17d7d68ac/Logo.svg",
 			"platform": "linux",
 			"ports": [
 				"8080/tcp"
@@ -25,7 +25,7 @@
 			"restart_policy": "always",
 			"description": "MOLAP data visualisation tool",
 			"image": "magm3333/pentahoserver:latest",
-			"logo": "hhttps://avatars.githubusercontent.com/u/49406389?s=48&v=4",
+			"logo": "https://avatars.githubusercontent.com/u/49406389?s=48&v=4",
 			"platform": "linux",
 			"ports": [
 				"8080/tcp"
@@ -38,6 +38,29 @@
 					"description": "KAFKA_BROKERS",
 					"label": "KAFKA_BROKERS",
 					"name": "KAFKA_BROKERS"
+				}
+			]
+			
+		},
+		{
+			"categories": [
+				"processing"
+			],
+			"description": "A visual tool to define and run real-time decision algorithms. docker run -it --network host -e DEFAULT_SCENARIO_TYPE=streaming-lite-embedded -e KAFKA_ADDRESS=localhost:3032 -e SCHEMA_REGISTRY_URL=http://localhost:3082 touk/nussknacker:latest",
+			"image": "touk/nussknacker:latest",
+			"logo": "https://camo.githubusercontent.com/d70f7c8c49468cd29870663760714c34ec3f76474923e5c41e9b25630020309c/68747470733a2f2f6e7573736b6e61636b65722e696f2f77702d636f6e74656e742f75706c6f6164732f323032312f31302f4e7573736b6e61636b65722d6c6f676f2d626c61636b2e737667",
+			"platform": "linux",
+			"ports": [
+				"8181/tcp"
+			],
+			"title": "nussknacker",
+			"type": 1,
+			"env": [
+				{
+					"default": "request-response-embedded",
+					"description": "DEFAULT_SCENARIO_TYPE",
+					"label": "DEFAULT_SCENARIO_TYPE",
+					"name": "DEFAULT_SCENARIO_TYPE"
 				}
 			]
 			
