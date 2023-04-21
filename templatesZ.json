@@ -1,6 +1,47 @@
 {
 	"version": "2",
 	"templates": [
+
+		{
+			"categories": [
+				"Processing"
+			],
+			"description": "Redpanda Console is a developer-friendly UI for managing your Kafka/Redpanda workloads. ",
+			"image": "docker.redpanda.com/redpandadata/console:latest",
+			"logo": "https://i.pinimg.com/originals/a4/50/84/a45084beba52027a92462c7b9f1708c5.png",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "Pantaho server CE",
+			"type": 1
+			
+		},
+
+		{
+			"categories": [
+				"OLAP"
+			],
+			"restart_policy": "always",
+			"description": "MOLAP data visualisation tool",
+			"image": "magm3333/pentahoserver:latest",
+			"logo": "hhttps://avatars.githubusercontent.com/u/49406389?s=48&v=4",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "Redmanda Console (kafka console)",
+			"type": 1,
+			"env": [
+				{
+					"default": "host.docker.internal:9092",
+					"description": "KAFKA_BROKERS",
+					"label": "KAFKA_BROKERS",
+					"name": "KAFKA_BROKERS"
+				}
+			]
+			
+		},
 		{
 			"categories": [
 				"ETL"
