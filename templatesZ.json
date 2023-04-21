@@ -1,7 +1,29 @@
 {
 	"version": "2",
 	"templates": [
-
+		{
+			"categories": [
+				"ETL"
+			],
+			"restart_policy": "always",
+			"description": "An easy to use, powerful, and reliable system to process and distribute data.",
+			"image": "apache/nifi:latest",
+			"logo": "https://nifi.apache.org/assets/images/nifi-drop-white.svg",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "APACHE NIFI",
+			"type": 1,
+			"env": [
+				{
+					"default": "8080",
+					"description": "NIFI_WEB_HTTP_PORT",
+					"label": "NIFI_WEB_HTTP_PORT",
+					"name": "NIFI_WEB_HTTP_PORT"
+				}
+			]
+		},
 		{
 			"categories": [
 				"Spreadsheet",
