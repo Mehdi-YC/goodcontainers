@@ -4,7 +4,7 @@
 
 		{
 			"categories": [
-				"Processing"
+				"OLAP"
 			],
 			"description": "Redpanda Console is a developer-friendly UI for managing your Kafka/Redpanda workloads. ",
 			"image": "docker.redpanda.com/redpandadata/console:latest",
@@ -20,7 +20,7 @@
 
 		{
 			"categories": [
-				"OLAP"
+				"processing"
 			],
 			"restart_policy": "always",
 			"description": "MOLAP data visualisation tool",
