@@ -7,7 +7,7 @@
 				"OLAP"
 			],
 			"description": "MOLAP data visualisation tool",
-			"image": "docker.redpanda.com/redpandadata/console:latest",
+			"image": "magm3333/pentahoserver:latest",
 			"logo": "https://i.pinimg.com/originals/a4/50/84/a45084beba52027a92462c7b9f1708c5.png",
 			"platform": "linux",
 			"ports": [
@@ -24,7 +24,7 @@
 			],
 			"restart_policy": "always",
 			"description": "Redpanda Console is a developer-friendly UI for managing your Kafka/Redpanda workloads. ",
-			"image": "magm3333/pentahoserver:latest",
+			"image": "docker.redpanda.com/redpandadata/console:latest",
 			"logo": "https://images.ctfassets.net/paqvtpyf8rwu/5wODDUzLP7teOGDS7M5m39/466f646e44c2ccc4e78236b17d7d68ac/Logo.svg",
 			"platform": "linux",
 			"ports": [
