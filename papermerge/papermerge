@@ -1,8 +1,0 @@
-sudo docker run -d \
-  --name=papermerge \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=America/New_York \
-  -p 8000:8000 \
-  --restart unless-stopped \
-  lscr.io/linuxserver/papermerge

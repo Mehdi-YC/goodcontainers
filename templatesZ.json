@@ -1,147 +1,234 @@
 {
 	"version": "2",
 	"templates": [
-		
-		        {
-            "categories": [
-                "data","Logging"
-            ],
-            "description": "Collect, search and visualise log data with Elasticsearch, Logstash, and Kibana. ",
-
-            "image": "sebp/elk:latest",
-            "logo": "https://cdn.freebiesupply.com/logos/large/2x/elastic-stack-logo-svg-vector.svg",
-            "platform": "linux",
-            "ports": [
-                "5601/tcp",
-		"9200/tcp",
-		"5044/tcp"
-            ],
-            "title": "ELK stack",
-            "type": 1
-        },
-			
-	        {
-            "categories": [
-                "data","dashboard"
-            ],
-            "description": "Apache Superset is a Data Visualization and Data Exploration Platform. ",
-
-            "image": "apache/superset:latest",
-            "logo": "https://superset.apache.org/img/favicon.ico",
-            "platform": "linux",
-            "ports": [
-                "8088/tcp"
-            ],
-            "title": "Apache superset",
-            "type": 1
-        },
-		
-		{
-            "categories": [
-                "data","dashboard"
-            ],
-            "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more.",
-
-            "image": "grafana/grafana:latest",
-            "logo": "https://grafana.com/static/assets/img/fav32.png",
-            "platform": "linux",
-            "ports": [
-                "3000/tcp"
-            ],
-            "title": "Grafana",
-            "type": 1
-        },
-		
-
-        {
-            "categories": [
-                "code","pipelines"
-            ],
-            "description": "Build powerful pipelines in any programming language. ",
-
-            "image": "gaiapipeline/gaia:latest",
-            "logo": "https://gist.githubusercontent.com/michelvocks/ef3894f63c3bb004bca1a2fd5f7eb644/raw/40c5799d74a6f28af1874e726083a50a3ebd877d/gaia-logo-text.png",
-            "platform": "linux",
-            "ports": [
-                "8080/tcp"
-            ],
-            "title": "Gaia pipeline",
-            "type": 1
-        },
-		
-		
-	        {
-            "categories": [
-                "cms","low-code"
-            ],
-            "description": "Open source Node.js Headless CMS to easily build customisable APIs.",
-
-            "image": "strapi/strapi:latest",
-            "logo": "https://strapi.io/assets/favicon-32x32.png",
-            "platform": "linux",
-            "ports": [
-                "1337/tcp"
-            ],
-            "title": "Strapi",
-            "type": 1
-        },
-		
-		
-		
-		        {
-            "categories": [
-                "coding","datascience"
-            ],
-            "description": "Base Jupyter Notebook Stack",
-
-            "image": "jupyter/base-notebook:latest",
-            "logo": "https://jupyter-docker-stacks.readthedocs.io/en/latest/_static/jupyter-logo.svg",
-            "platform": "linux",
-            "ports": [
-                "8888/tcp"
-            ],
-            "title": "Jupyter",
-            "type": 1
-
-        },
-		{
-        	"categories": [
-        		"database", "low-code"
-        	],
-        	"description": "The Open Source Airtable Alternative 🎃Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet. .",
-
-        	"image": "nocodb/nocodb:latest",
-        	"logo": "https://docs.nocodb.com/favicon-128.png",
-        	"platform": "linux",
-        	"ports": [
-        		"8080/tcp"
-        	],
-        	"title": "NocoDB",
-        	"type": 1,
-        	"volumes": [{
-        		"container": "/home/node/.nocodb"
-        	}],
-        	"env": [{
-        			"label": "use a database first",
-        			"name": "NC_DB",
-        			"default": "pg://host:port?u=user&p=password&d=database"
-        		},
-        		{
-        			"label": "secret token",
-        			"name": "NC_AUTH_JWT_SECRET",
-        			"default": "569a1821-0a93-45e8-87ab-eb857f20a010"
-        		}
-
-        	]
-        },
-
 
 		{
 			"categories": [
-				"workflow", "low-code"
+				"Spreadsheet",
+				"Office suite"
+			],
+			"restart_policy": "always",
+			"description": "Run your private office with the ONLYOFFICE",
+			"image": "onlyoffice/documentserver:latest",
+			"logo": "https://helpcenter.onlyoffice.com/images/logonew.svg",
+			"platform": "linux",
+			"ports": [
+				"80/tcp"
+
+			],
+			"title": "OnlyOffice",
+			"type": 1,
+			"env": [
+				{
+					"default": "my_token",
+					"description": "JWT_SECRET",
+					"label": "JWT_SECRET",
+					"name": "JWT_SECRET"
+				},
+				{
+					"default": "false",
+					"description": "JWT_ENABLED",
+					"label": "JWT_ENABLED",
+					"name": "JWT_ENABLED"
+				}
+			]
+		},
+
+		{
+			"categories": [
+				"OLAP",
+				"Datawarehouse"
+			],
+			"description": "ClickHouse is the fastest and most resource efficient open-source database for real-time apps and analytics.",
+			"image": "yandex/clickhouse-server:latest",
+			"logo": "https://clickhouse.com/logos/black-logo.svg",
+			"platform": "linux",
+			"ports": [
+				"9000/tcp",
+				"8123/tcp"
+			],
+			"title": "Clickhouse",
+			"type": 1,
+			"env": [
+				{
+					"default": "nofile=262144:262144",
+					"description": "ulimit",
+					"label": "ulimit",
+					"name": "ulimit"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Utility"
+			],
+			"description": "Manage your files on the cloud.",
+			"restart_policy": "unless-stopped",
+			"image": "lscr.io/linuxserver/papermerge:latest",
+			"logo": "https://www.papermerge.com/assets/img/papermerge-logo.svg",
+			"platform": "linux",
+			"ports": [
+				"8000/tcp"
+			],
+			"title": "Clickhouse",
+			"type": 1,
+			"env": [
+				{
+					"default": "1000",
+					"description": "PUID",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"description": "PGID",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"description": "time zone",
+					"label": "time zone",
+					"name": "America/New_York"
+				},
+				{
+					"default": "nofile=262144:262144",
+					"description": "ulimit",
+					"label": "ulimit",
+					"name": "ulimit"
+				}
+			]
+		},
+		{
+			"categories": [
+				"data",
+				"Logging"
+			],
+			"description": "Collect, search and visualise log data with Elasticsearch, Logstash, and Kibana. ",
+			"image": "sebp/elk:latest",
+			"logo": "https://cdn.freebiesupply.com/logos/large/2x/elastic-stack-logo-svg-vector.svg",
+			"platform": "linux",
+			"ports": [
+				"5601/tcp",
+				"9200/tcp",
+				"5044/tcp"
+			],
+			"title": "ELK stack",
+			"type": 1
+		},
+		{
+			"categories": [
+				"data",
+				"dashboard"
+			],
+			"description": "Apache Superset is a Data Visualization and Data Exploration Platform. ",
+			"image": "apache/superset:latest",
+			"logo": "https://superset.apache.org/img/favicon.ico",
+			"platform": "linux",
+			"ports": [
+				"8088/tcp"
+			],
+			"title": "Apache superset",
+			"type": 1
+		},
+		{
+			"categories": [
+				"data",
+				"dashboard"
+			],
+			"description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more.",
+			"image": "grafana/grafana:latest",
+			"logo": "https://grafana.com/static/assets/img/fav32.png",
+			"platform": "linux",
+			"ports": [
+				"3000/tcp"
+			],
+			"title": "Grafana",
+			"type": 1
+		},
+		{
+			"categories": [
+				"code",
+				"pipelines"
+			],
+			"description": "Build powerful pipelines in any programming language. ",
+			"image": "gaiapipeline/gaia:latest",
+			"logo": "https://gist.githubusercontent.com/michelvocks/ef3894f63c3bb004bca1a2fd5f7eb644/raw/40c5799d74a6f28af1874e726083a50a3ebd877d/gaia-logo-text.png",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "Gaia pipeline",
+			"type": 1
+		},
+		{
+			"categories": [
+				"cms",
+				"low-code"
+			],
+			"description": "Open source Node.js Headless CMS to easily build customisable APIs.",
+			"image": "strapi/strapi:latest",
+			"logo": "https://strapi.io/assets/favicon-32x32.png",
+			"platform": "linux",
+			"ports": [
+				"1337/tcp"
+			],
+			"title": "Strapi",
+			"type": 1
+		},
+		{
+			"categories": [
+				"coding",
+				"datascience"
+			],
+			"description": "Base Jupyter Notebook Stack",
+			"image": "jupyter/base-notebook:latest",
+			"logo": "https://jupyter-docker-stacks.readthedocs.io/en/latest/_static/jupyter-logo.svg",
+			"platform": "linux",
+			"ports": [
+				"8888/tcp"
+			],
+			"title": "Jupyter",
+			"type": 1
+		},
+		{
+			"categories": [
+				"database",
+				"low-code"
+			],
+			"description": "The Open Source Airtable Alternative 🎃Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet. .",
+			"image": "nocodb/nocodb:latest",
+			"logo": "https://docs.nocodb.com/favicon-128.png",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "NocoDB",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/home/node/.nocodb"
+				}
+			],
+			"env": [
+				{
+					"label": "use a database first",
+					"name": "NC_DB",
+					"default": "pg://host:port?u=user&p=password&d=database"
+				},
+				{
+					"label": "secret token",
+					"name": "NC_AUTH_JWT_SECRET",
+					"default": "569a1821-0a93-45e8-87ab-eb857f20a010"
+				}
+			]
+		},
+		{
+			"categories": [
+				"workflow",
+				"low-code"
 			],
 			"description": "n8n is a free and open fair-code distributed node based Workflow Automation Tool. It can be self-hosted, easily extended, and so also used with internal tools.",
-
 			"image": "n8nio/n8n:latest",
 			"logo": "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png",
 			"platform": "linux",
@@ -150,10 +237,13 @@
 			],
 			"title": "n8n",
 			"type": 1,
-			"volumes": [{
-				"container": "/home/node/.n8n"
-			}],
-			"env": [{
+			"volumes": [
+				{
+					"container": "/home/node/.n8n"
+				}
+			],
+			"env": [
+				{
 					"label": "activate user auth",
 					"name": "N8N_BASIC_AUTH_ACTIVE"
 				},
@@ -164,25 +254,19 @@
 				{
 					"label": "access password",
 					"name": "N8N_BASIC_AUTH_PASSWORD"
-				}
-				,
+				},
 				{
 					"label": "WEBHOOK_URL",
 					"name": "WEBHOOK_URL"
 				}
-				
 			]
 		},
-
-
-
-
 		{
 			"categories": [
-				"workflow", "low-code"
+				"workflow",
+				"low-code"
 			],
 			"description": "Low-code programming for event-driven applications ",
-
 			"image": "nodered/node-red:latest",
 			"logo": "https://aws1.discourse-cdn.com/business6/uploads/nodered/original/1X/778549404735e222c89ce5449482a189ace8cdae.png",
 			"platform": "linux",
@@ -191,16 +275,19 @@
 			],
 			"title": "Node-red",
 			"type": 1,
-			"volumes": [{
-				"container": "/data"
-			}]
+			"volumes": [
+				{
+					"container": "/data"
+				}
+			]
 		},
 		{
 			"categories": [
 				"database"
 			],
 			"description": "The most advanced open-source database",
-			"env": [{
+			"env": [
+				{
 					"label": "Superuser",
 					"name": "POSTGRES_USER"
 				},
@@ -217,14 +304,12 @@
 			],
 			"title": "PostgreSQL",
 			"type": 1,
-			"volumes": [{
-				"container": "/var/lib/postgresql/data"
-			}]
+			"volumes": [
+				{
+					"container": "/var/lib/postgresql/data"
+				}
+			]
 		},
-
-
-
-
 		{
 			"categories": [
 				"serverless"
@@ -241,8 +326,6 @@
 			"title": "OpenFaaS",
 			"type": 2
 		},
-
-
 		{
 			"categories": [
 				"database"
@@ -256,12 +339,12 @@
 			],
 			"title": "Redis",
 			"type": 1,
-			"volumes": [{
-				"container": "/data"
-			}]
+			"volumes": [
+				{
+					"container": "/data"
+				}
+			]
 		},
-
-
 		{
 			"categories": [
 				"search-engine"
@@ -275,19 +358,19 @@
 			],
 			"title": "Solr",
 			"type": 1,
-			"volumes": [{
-				"container": "/opt/solr/mydata"
-			}]
+			"volumes": [
+				{
+					"container": "/opt/solr/mydata"
+				}
+			]
 		},
-
-
-
 		{
 			"categories": [
 				"database"
 			],
 			"description": "Microsoft SQL Server on Linux",
-			"env": [{
+			"env": [
+				{
 					"name": "ACCEPT_EULA",
 					"set": "Y"
 				},
@@ -306,17 +389,18 @@
 			"title": "SQL Server",
 			"type": 1
 		},
-
 		{
 			"categories": [
 				"CMS"
 			],
 			"description": "Wordpress setup with a MySQL database",
-			"env": [{
-				"description": "Password used by the MySQL root user.",
-				"label": "Database root password",
-				"name": "MYSQL_DATABASE_PASSWORD"
-			}],
+			"env": [
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "MYSQL_DATABASE_PASSWORD"
+				}
+			],
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"note": "Deploys a Wordpress instance connected to a MySQL database.",
 			"platform": "linux",
@@ -327,17 +411,18 @@
 			"title": "Wordpress",
 			"type": 3
 		},
-
 		{
 			"categories": [
 				"CMS"
 			],
 			"description": "Wordpress setup with a MySQL database",
-			"env": [{
-				"description": "Password used by the MySQL root user.",
-				"label": "Database root password",
-				"name": "MYSQL_DATABASE_PASSWORD"
-			}],
+			"env": [
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "MYSQL_DATABASE_PASSWORD"
+				}
+			],
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"note": "Deploys a Wordpress instance connected to a MySQL database.",
 			"platform": "linux",
@@ -375,9 +460,6 @@
 			"title": "Plesk",
 			"type": 1
 		},
-
-
-
 		{
 			"categories": [
 				"Other",
@@ -394,7 +476,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "YouTubeDL-Material",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"bind": "/portainer/Files/AppData/Config/YTDLM",
 					"container": "/app/appdata"
 				},
@@ -416,10 +499,10 @@
 				}
 			]
 		},
-
 		{
 			"description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -479,16 +562,17 @@
 			"restart_policy": "unless-stopped",
 			"title": "Mariadb",
 			"type": 1,
-			"volumes": [{
-				"bind": "/volume1/docker/mariadb/config",
-				"container": "/config"
-			}]
+			"volumes": [
+				{
+					"bind": "/volume1/docker/mariadb/config",
+					"container": "/config"
+				}
+			]
 		},
-
-
 		{
 			"description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -518,7 +602,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "Nextcloud",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"bind": "/volume1/docker/nextcloud/config",
 					"container": "/config"
 				},
@@ -528,14 +613,10 @@
 				}
 			]
 		},
-
-
-
-
-
 		{
 			"description": "[Nginx](https://nginx.org/) is a simple webserver with php support. The config files reside in `/config` for easy user customization.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -566,13 +647,13 @@
 			"restart_policy": "unless-stopped",
 			"title": "Nginx",
 			"type": 1,
-			"volumes": [{
-				"bind": "/volume1/docker/nginx/config",
-				"container": "/config"
-			}]
+			"volumes": [
+				{
+					"bind": "/volume1/docker/nginx/config",
+					"container": "/config"
+				}
+			]
 		},
-
-
 		{
 			"categories": [
 				"webserver"
@@ -586,14 +667,16 @@
 			],
 			"title": "Httpd",
 			"type": 1,
-			"volumes": [{
-				"container": "/usr/local/apache2/htdocs/"
-			}]
+			"volumes": [
+				{
+					"container": "/usr/local/apache2/htdocs/"
+				}
+			]
 		},
-
 		{
 			"description": "[Syncthing](https://syncthing.net) replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -626,7 +709,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "Syncthing",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"bind": "/volume1/docker/syncthing/config",
 					"container": "/config"
 				},
@@ -640,18 +724,13 @@
 				}
 			]
 		},
-
-
-
-
-
-
 		{
 			"categories": [
 				"Utilities"
 			],
 			"description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -688,7 +767,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "Webtop",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"bind": "/volume1/docker/webtop/config",
 					"container": "/config"
 				},
@@ -698,12 +778,10 @@
 				}
 			]
 		},
-
-
-
 		{
 			"description": "[Wireshark](https://www.wireshark.org/) is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -734,18 +812,20 @@
 			"restart_policy": "unless-stopped",
 			"title": "Wireshark",
 			"type": 1,
-			"volumes": [{
-				"bind": "/volume1/docker/wireshark/config",
-				"container": "/config"
-			}]
+			"volumes": [
+				{
+					"bind": "/volume1/docker/wireshark/config",
+					"container": "/config"
+				}
+			]
 		},
-
 		{
 			"category": [
 				"Other"
 			],
 			"description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
-			"env": [{
+			"env": [
+				{
 					"label": "INTERFACE",
 					"name": "INTERFACE",
 					"set": "eth0"
@@ -776,16 +856,16 @@
 			],
 			"title": "openvpn-as",
 			"type": 1,
-			"volumes": [{
-				"container": "/config"
-			}]
+			"volumes": [
+				{
+					"container": "/config"
+				}
+			]
 		},
-
-
-
 		{
 			"description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
-			"env": [{
+			"env": [
+				{
 					"default": "1024",
 					"description": "for GroupID",
 					"label": "PUID",
@@ -839,12 +919,13 @@
 			"restart_policy": "unless-stopped",
 			"title": "Openvscode-server",
 			"type": 1,
-			"volumes": [{
-				"bind": "/volume1/docker/openvscode-server/config",
-				"container": "/config"
-			}]
+			"volumes": [
+				{
+					"bind": "/volume1/docker/openvscode-server/config",
+					"container": "/config"
+				}
+			]
 		},
-
 		{
 			"categories": [
 				"Other",
@@ -862,7 +943,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "Homer",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"bind": "/portainer/Files/AppData/Config/Homer/assets",
 					"container": "/www/assets"
 				},
@@ -872,17 +954,17 @@
 				}
 			]
 		},
-
-
 		{
 			"categories": [
 				"continuous-integration"
 			],
 			"description": "Open-source continuous integration tool",
-			"env": [{
-				"label": "Jenkins options",
-				"name": "JENKINS_OPTS"
-			}],
+			"env": [
+				{
+					"label": "Jenkins options",
+					"name": "JENKINS_OPTS"
+				}
+			],
 			"image": "jenkins/jenkins:lts",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
 			"platform": "linux",
@@ -892,18 +974,19 @@
 			],
 			"title": "Jenkins",
 			"type": 1,
-			"volumes": [{
-				"container": "/var/jenkins_home"
-			}]
+			"volumes": [
+				{
+					"container": "/var/jenkins_home"
+				}
+			]
 		},
-
-
 		{
 			"categories": [
 				"marketing"
 			],
 			"description": "Open-source marketing automation platform",
-			"env": [{
+			"env": [
+				{
 					"label": "MySQL database host",
 					"name": "MAUTIC_DB_HOST",
 					"type": "container"
@@ -921,18 +1004,19 @@
 			],
 			"title": "Mautic",
 			"type": 1,
-			"volumes": [{
-				"container": "/var/www/html"
-			}]
+			"volumes": [
+				{
+					"container": "/var/www/html"
+				}
+			]
 		},
-
-
 		{
 			"categories": [
 				"storage"
 			],
 			"description": "Standalone AWS S3 protocol server",
-			"env": [{
+			"env": [
+				{
 					"label": "Scality S3 access key",
 					"name": "SCALITY_ACCESS_KEY"
 				},
@@ -949,7 +1033,8 @@
 			],
 			"title": "Scality S3",
 			"type": 1,
-			"volumes": [{
+			"volumes": [
+				{
 					"container": "/usr/src/app/localData"
 				},
 				{
@@ -959,8 +1044,8 @@
 		},
 		{
 			"categories": [
-					"Other",
-					"Music"
+				"Other",
+				"Music"
 			],
 			"description": "Deemix is a deezer downloader built from the ashes of Deezloader Remix.",
 			"image": "registry.gitlab.com/bockiii/deemix-docker",
@@ -969,340 +1054,361 @@
 			"note": "Deemix may take a few minutes to install. Be sure to check the logs for details. Refer to \u003ca href='https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken'\u003ethis page\u003c/a\u003e for userToken details.",
 			"platform": "linux",
 			"ports": [
-					"9666:9666/tcp"
+				"9666:9666/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"title": "DeeMix",
 			"type": 1,
 			"volumes": [
-					{
-							"bind": "/portainer/Files/AppData/Config/DeeMix",
-							"container": "/config"
-					},
-					{
-							"bind": "/portainer/Downloads",
-							"container": "/downloads"
-					}
+				{
+					"bind": "/portainer/Files/AppData/Config/DeeMix",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Downloads",
+					"container": "/downloads"
+				}
 			]
-	},
-	{
-		"type": 1,
-		"title": "Mongo",
-		"description": "Open-source document-oriented database",
-		"categories": [
+		},
+		{
+			"type": 1,
+			"title": "Mongo",
+			"description": "Open-source document-oriented database",
+			"categories": [
 				"database"
-		],
-		"platform": "linux",
-		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-		"image": "mongo:latest",
-		"ports": [
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+			"image": "mongo:latest",
+			"ports": [
 				"27017/tcp"
-		],
-		"volumes": [{
-				"container": "/data/db"
-		}]
-	},
-	{
-		"type": 1,
-		"title": "MySQL",
-		"description": "The most popular open-source database",
-		"categories": [
+			],
+			"volumes": [
+				{
+					"container": "/data/db"
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "MySQL",
+			"description": "The most popular open-source database",
+			"categories": [
 				"database"
-		],
-		"platform": "linux",
-		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
-		"image": "mysql:latest",
-		"env": [{
-				"name": "MYSQL_ROOT_PASSWORD",
-				"label": "Root password"
-		}],
-		"ports": [
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+			"image": "mysql:latest",
+			"env": [
+				{
+					"name": "MYSQL_ROOT_PASSWORD",
+					"label": "Root password"
+				}
+			],
+			"ports": [
 				"3306/tcp"
-		],
-		"volumes": [{
-				"container": "/var/lib/mysql"
-		}]
-},
-{
-	"type": 1,
-	"title": "Odoo",
-	"description": "Open-source business apps",
-	"categories": [
-			"project-management"
-	],
-	"platform": "linux",
-	"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/odoo.png",
-	"image": "odoo:latest",
-	"env": [{
+			],
+			"volumes": [
+				{
+					"container": "/var/lib/mysql"
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "Odoo",
+			"description": "Open-source business apps",
+			"categories": [
+				"project-management"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/odoo.png",
+			"image": "odoo:latest",
+			"env": [
+				{
 					"name": "HOST",
 					"label": "PostgreSQL database host",
 					"type": "container"
-			},
-			{
+				},
+				{
 					"name": "USER",
 					"label": "Database user"
-			},
-			{
+				},
+				{
 					"name": "PASSWORD",
 					"label": "Database password"
-			}
-	],
-	"ports": [
-			"8069/tcp"
-	],
-	"volumes": [{
+				}
+			],
+			"ports": [
+				"8069/tcp"
+			],
+			"volumes": [
+				{
 					"container": "/var/lib/odoo"
-			},
-			{
+				},
+				{
 					"container": "/mnt/extra-addons"
-			}
-	]
-},
-{
-	"categories": [
-			"Other",
-			"Tools"
-	],
-	"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
-	"image": "pihole/pihole:latest",
-	"logo": "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/Images/pihole.png",
-	"name": "pihole",
-	"note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article \u003ca href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'\u003ehere\u003c/a\u003e if you run into issues binding to port 53.",
-	"platform": "linux",
-	"ports": [
-			"53:53/tcp",
-			"53:53/udp",
-			"67:67/udp",
-			"1010:80/tcp",
-			"4443:443/tcp"
-	],
-	"restart_policy": "unless-stopped",
-	"title": "Pi-Hole",
-	"type": 1,
-	"volumes": [
-			{
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
+			"image": "pihole/pihole:latest",
+			"logo": "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/Images/pihole.png",
+			"name": "pihole",
+			"note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article \u003ca href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'\u003ehere\u003c/a\u003e if you run into issues binding to port 53.",
+			"platform": "linux",
+			"ports": [
+				"53:53/tcp",
+				"53:53/udp",
+				"67:67/udp",
+				"1010:80/tcp",
+				"4443:443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Pi-Hole",
+			"type": 1,
+			"volumes": [
+				{
 					"bind": "/portainer/Files/AppData/Config/PiHole",
 					"container": "/etc/pihole"
-			},
-			{
+				},
+				{
 					"bind": "/portainer/Files/AppData/Config/PiHole/DNS",
 					"container": "/etc/dnsmasq.d"
-			}
-	]
-},
-{
-	"type": 1,
-	"title": "RabbitMQ",
-	"description": "Highly reliable enterprise messaging system",
-	"categories": [
-			"messaging"
-	],
-	"platform": "linux",
-	"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/rabbitmq.png",
-	"image": "rabbitmq:latest",
-	"ports": [
-			"5671/tcp",
-			"5672/tcp"
-	],
-	"volumes": [{
-			"container": "/var/lib/rabbitmq"
-	}]
-},
-{
-	"categories": [
-			"Other",
-			"Tools"
-	],
-	"description": "A web interface for managing docker containers with an emphasis on templating to provide 1 click deployments. Think of it like a decentralized app store for servers that anyone can make packages for.",
-	"image": "selfhostedpro/yacht:latest",
-	"logo": "https://raw.githubusercontent.com/SelfhostedPro/Yacht/master/readme_media/Yacht_logo_1_dark.png",
-	"name": "yacht",
-	"platform": "linux",
-	"ports": [
-			"8001:8000/tcp"
-	],
-	"restart_policy": "unless-stopped",
-	"title": "Yacht",
-	"type": 1,
-	"volumes": [
-			{
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "RabbitMQ",
+			"description": "Highly reliable enterprise messaging system",
+			"categories": [
+				"messaging"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/rabbitmq.png",
+			"image": "rabbitmq:latest",
+			"ports": [
+				"5671/tcp",
+				"5672/tcp"
+			],
+			"volumes": [
+				{
+					"container": "/var/lib/rabbitmq"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A web interface for managing docker containers with an emphasis on templating to provide 1 click deployments. Think of it like a decentralized app store for servers that anyone can make packages for.",
+			"image": "selfhostedpro/yacht:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/Yacht/master/readme_media/Yacht_logo_1_dark.png",
+			"name": "yacht",
+			"platform": "linux",
+			"ports": [
+				"8001:8000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Yacht",
+			"type": 1,
+			"volumes": [
+				{
 					"bind": "yacht",
 					"container": "/config"
-			},
-			{
+				},
+				{
 					"bind": "/var/run/docker.sock",
 					"container": "/var/run/docker.sock"
-			}
-	]
-},
-
-{
-	"categories": [
-		"backend","lowcode"
-	],
-	"description": "Supabase is an open source Firebase alternative.It provides all the backend services you need to build a product. You can use it completely, or just the services you require:",
-	"env": [
+				}
+			]
+		},
 		{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "POSTGRES_PASSWORD"
-		,"default":"your-super-secret-and-long-postgres-password"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "JWT_SECRET"
-		,"default":"your-super-secret-jwt-token-with-at-least-32-characters-long"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ANON_KEY"
-		,"default":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SERVICE_ROLE_KEY"
-		,"default":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJzZXJ2aWNlX3JvbGUiLAogICAgImlzcyI6ICJzdXBhYmFzZS1kZW1vIiwKICAgICJpYXQiOiAxNjQxNzY5MjAwLAogICAgImV4cCI6IDE3OTk1MzU2MDAKfQ.DaYlNEoUrrEn2Ig7tqibS-PHK5vgusbcbo7X36XVt4Q"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "POSTGRES_HOST"
-		,"default":"db"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "POSTGRES_DB"
-		,"default":"postgres"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "POSTGRES_USER"
-		,"default":"postgres"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "POSTGRES_PORT"
-		,"default":"5432"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "KONG_HTTP_PORT"
-		,"default":"8000"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "KONG_HTTPS_PORT"
-		,"default":"8443"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "PGRST_DB_SCHEMAS"
-		,"default":"public,storage,graphql_public"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SITE_URL"
-		,"default":"http://localhost:3000"
-	},
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ADDITIONAL_REDIRECT_URLS"
-		,"default":""
-	},
-
-	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "JWT_EXPIRY"
-		,"default":"3600"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "DISABLE_SIGNUP"
-		,"default":"false"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ENABLE_EMAIL_SIGNUP"
-		,"default":"true"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ENABLE_EMAIL_AUTOCONFIRM"
-		,"default":"true"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_ADMIN_EMAIL"
-		,"default":"admin@example.com"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_HOST"
-		,"default":"fake"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_PORT"
-		,"default":"fake"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_USER"
-		,"default":"fake"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_PASS"
-		,"default":"fake"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "SMTP_SENDER_NAME"
-		,"default":"fake"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ENABLE_PHONE_SIGNUP"
-		,"default":"true"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "ENABLE_PHONE_AUTOCONFIRM"
-		,"default":"true"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "STUDIO_PORT"
-		,"default":"3000"
-	},	{
-		"description": "Password used by the MySQL root user.",
-		"label": "Database root password",
-		"name": "PUBLIC_REST_URL"
-		,"default":"http://localhost:8000/rest/v1/"
-	}
-
-],
-	"logo": "https://supabase.com/docs/supabase-dark.svg",
-	"note": "Deploys a Wordpress instance connected to a MySQL database.",
-	"platform": "linux",
-	"repository": {
-		"stackfile": "supabase/docker-compose.yml",
-		"url": "https://github.com/mehdi-yc/goodcontainers"
-	},
-	"title": "Supabase",
-	"type": 3
-}
+			"categories": [
+				"backend",
+				"lowcode"
+			],
+			"description": "Supabase is an open source Firebase alternative.It provides all the backend services you need to build a product. You can use it completely, or just the services you require:",
+			"env": [
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "POSTGRES_PASSWORD",
+					"default": "your-super-secret-and-long-postgres-password"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "JWT_SECRET",
+					"default": "your-super-secret-jwt-token-with-at-least-32-characters-long"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ANON_KEY",
+					"default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SERVICE_ROLE_KEY",
+					"default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJzZXJ2aWNlX3JvbGUiLAogICAgImlzcyI6ICJzdXBhYmFzZS1kZW1vIiwKICAgICJpYXQiOiAxNjQxNzY5MjAwLAogICAgImV4cCI6IDE3OTk1MzU2MDAKfQ.DaYlNEoUrrEn2Ig7tqibS-PHK5vgusbcbo7X36XVt4Q"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "POSTGRES_HOST",
+					"default": "db"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "POSTGRES_DB",
+					"default": "postgres"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "POSTGRES_USER",
+					"default": "postgres"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "POSTGRES_PORT",
+					"default": "5432"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "KONG_HTTP_PORT",
+					"default": "8000"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "KONG_HTTPS_PORT",
+					"default": "8443"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "PGRST_DB_SCHEMAS",
+					"default": "public,storage,graphql_public"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SITE_URL",
+					"default": "http://localhost:3000"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ADDITIONAL_REDIRECT_URLS",
+					"default": ""
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "JWT_EXPIRY",
+					"default": "3600"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "DISABLE_SIGNUP",
+					"default": "false"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ENABLE_EMAIL_SIGNUP",
+					"default": "true"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ENABLE_EMAIL_AUTOCONFIRM",
+					"default": "true"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_ADMIN_EMAIL",
+					"default": "admin@example.com"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_HOST",
+					"default": "fake"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_PORT",
+					"default": "fake"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_USER",
+					"default": "fake"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_PASS",
+					"default": "fake"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "SMTP_SENDER_NAME",
+					"default": "fake"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ENABLE_PHONE_SIGNUP",
+					"default": "true"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "ENABLE_PHONE_AUTOCONFIRM",
+					"default": "true"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "STUDIO_PORT",
+					"default": "3000"
+				},
+				{
+					"description": "Password used by the MySQL root user.",
+					"label": "Database root password",
+					"name": "PUBLIC_REST_URL",
+					"default": "http://localhost:8000/rest/v1/"
+				}
+			],
+			"logo": "https://supabase.com/docs/supabase-dark.svg",
+			"note": "Deploys a Wordpress instance connected to a MySQL database.",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "supabase/docker-compose.yml",
+				"url": "https://github.com/mehdi-yc/goodcontainers"
+			},
+			"title": "Supabase",
+			"type": 3
+		}
 	]
 }
