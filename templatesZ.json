@@ -133,7 +133,7 @@
 			"ports": [
 				"8000/tcp"
 			],
-			"title": "Clickhouse",
+			"title": "papermerge",
 			"type": 1,
 			"env": [
 				{
